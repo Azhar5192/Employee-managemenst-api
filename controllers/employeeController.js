@@ -13,9 +13,14 @@ const getEmployees = async (req, res) => {
     }
 };
 
+// get employee by id
 const getEmployeeById = async (req, res) => {
     try {
         const getId = Number(req.params.id);
+        if (isNaN(getId)) {
+            return res.status(400).json({ error: "Invalid employee ID "});
+
+        }
 
         const employee = await Employee.findOne({ id: getId });
 
@@ -23,6 +28,7 @@ const getEmployeeById = async (req, res) => {
             return res.status(404).json({ error: "Employee not found" });
 
         }
+
 
         res.status(200).json(employee);
     } catch (error) {
@@ -107,7 +113,7 @@ const createEmployee = async (req, res) => {
             name.trim() === ""
         ) {
             return res.status(400).json({
-                error: "Invalid name"
+                error: "Name cannot be empty"
             });
         }
 
