@@ -305,6 +305,7 @@ const deleteEmployee = async (req,res) => {
     }
 
 }
+
 module.exports = {
     getEmployees,
     getEmployeeById,
@@ -314,4 +315,5 @@ module.exports = {
     createEmployee,
     updateEmployee,
     deleteEmployee,
+    
 };

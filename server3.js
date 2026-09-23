@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 
 const connectDB = require("./config/database");
 const employeeRoutes = require("./routes/employeeRoutes");
+const authRoutes = require("./routes/authRoute")
 const logger = require("./middleware/logger");
 
 dotenv.config();
@@ -15,6 +16,7 @@ app.use(logger);
 connectDB();
 
 app.use(employeeRoutes);
+app.use(authRoutes)
 
 const PORT = process.env.PORT || 3000;
 
