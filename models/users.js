@@ -13,6 +13,7 @@ const userSchema = new mongoose.Schema({
     },
     role: String
 });
+// User --> save as database name in mongodb atlas
 const User = mongoose.model("User", userSchema);
 
 module.exports = User;
