@@ -21,6 +21,8 @@ A RESTful API for managing employee records.
 - Filter employees by salary
 - Update employee
 - Delete employee
+- User Registration
+- User Login
 - Request validation
 - MongoDB persistence
 
